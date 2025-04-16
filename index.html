@@ -53,6 +53,7 @@
                 <div class="flex items-center space-x-6">
                     <a href="#about" class="text-gray-300 hover:text-blue-400 transition duration-300">About</a>
                     <a href="#projects" class="text-gray-300 hover:text-blue-400 transition duration-300">Projects</a>
+                    <a href="#education" class="text-gray-300 hover:text-blue-400 transition duration-300">Education</a>
                     <a href="#skills" class="text-gray-300 hover:text-blue-400 transition duration-300">Skills</a>
                     <a href="#contact" class="text-gray-300 hover:text-blue-400 transition duration-300">Contact</a>
                     <button id="theme-toggle" class="p-2 rounded-full bg-gray-800 hover:bg-gray-700">
@@ -85,8 +86,11 @@
                     </p>
                 </div>
                 <div class="md:w-1/2 flex justify-center animate-on-scroll delay-200">
-                    <img src="cv.jpg" alt="Profile Image" class="rounded-lg shadow-lg w-full max-w-xs">
+                    <img src="cv.jpg" alt="Profile Image" class="w-full max-w-xs h-auto shadow-lg object-cover" style="border-radius: 50% / 30%;">
                 </div>
+                <!-- <div class="md:w-1/3 flex justify-center animate-on-scroll delay-200">
+                    <img src="cv.jpg" alt="Profile Image" class="w-full max-w-xs h-auto shadow-lg object-cover" style="border-radius: 50% / 30%;">
+                </div> -->
             </div>
         </div>
     </section>
@@ -95,7 +99,7 @@
     <section id="projects" class="bg-gray-800 py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center mb-12 animate-on-scroll">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Project 2 -->
                 <div class="bg-gray-900 p-6 rounded-lg shadow-lg project-card animate-on-scroll delay-100">
                     <h3 class="text-2xl font-semibold mb-3 text-white">Face Detection</h3>
@@ -126,6 +130,20 @@
                     </p>
                     <a href="https://github.com/nhanvan2506/e_book_website" class="text-blue-400 hover:underline font-medium">View Code</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-24 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-8 animate-on-scroll">Education</h2>
+            <img src="school.jpg" alt="Graduation Cap Icon" class="w-32 h-32 mx-auto mb-4 animate-on-scroll delay-100">
+            <div class="bg-gray-900 p-6 rounded-lg shadow-lg max-w-2xl mx-auto animate-on-scroll delay-200">
+                <h3 class="text-2xl font-semibold mb-2 text-white">Ho Chi Minh City University of Technology (Bach Khoa University)</h3>
+                <p class="text-lg text-gray-300 mb-2">Bachelor of Science in Computer Science, Third Year (Expected Graduation: 2026)</p>
+                <p class="text-gray-300">
+                    Studying core concepts in programming, algorithms, and data structures, with a focus on artificial intelligence and machine learning. Relevant coursework includes neural networks, computer vision, and natural language processing.
+                </p>
             </div>
         </div>
     </section>
