@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Engineer Intern Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1f2937; /* Dark background */
+            color: #e5e7eb; /* Light text */
+        }
+        .light-mode {
+            background-color: #f3f4f6;
+            color: #111827;
+        }
+        .light-mode .bg-gray-900 { background-color: #ffffff; }
+        .light-mode .bg-gray-800 { background-color: #f9fafb; }
+        .light-mode .text-gray-300 { color: #4b5563; }
+        .light-mode .bg-gradient-to-br.from-blue-800.to-purple-900 {
+            background: linear-gradient(to bottom right, #2563eb, #7c3aed);
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="transition-colors duration-300">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-gray-900 shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-blue-400">Portfolio about LE NHAN VAN</a>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="#about" class="text-gray-300 hover:text-blue-400 transition duration-300">About</a>
+                    <a href="#projects" class="text-gray-300 hover:text-blue-400 transition duration-300">Projects</a>
+                    <a href="#skills" class="text-gray-300 hover:text-blue-400 transition duration-300">Skills</a>
+                    <a href="#contact" class="text-gray-300 hover:text-blue-400 transition duration-300">Contact</a>
+                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-800 hover:bg-gray-700">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen bg-gradient-to-br from-blue-800 to-purple-900 text-white flex items-center justify-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 animate-on-scroll">AI Engineer Intern</h1>
+            <!-- <p class="text-xl md:text-2xl mb-8 animate-on-scroll delay-100">Third-Year Computer Science Student Passionate About Artificial Intelligence</p> -->
+            <a href="#contact" class="inline-block bg-white text-blue-800 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-200 transition duration-300 animate-on-scroll delay-200">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 animate-on-scroll">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 animate-on-scroll delay-100">
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        I'm a third-year Computer Science student and now I am studying at Ho Chi Minh city University of Technology (Bach Khoa University). I am a student with a deep passion for artificial intelligence and machine learning. My academic journey has equipped me with expertise in programming, algorithms, and data structures. I thrive on building intelligent systems that tackle real-world challenges, drawing from hands-on experience in neural networks and natural language processing. As a proactive learner and collaborative team member, I'm eager to contribute to innovative AI projects and drive technological advancements.
+                    </p>
+                </div>
+                <div class="md:w-1/2 flex justify-center animate-on-scroll delay-200">
+                    <img src="cv.jpg" alt="Profile Image" class="w-48 h-48 rounded-full shadow-lg object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-gray-800 py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 animate-on-scroll">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Project 2 -->
+                <div class="bg-gray-900 p-6 rounded-lg shadow-lg project-card animate-on-scroll delay-100">
+                    <h3 class="text-2xl font-semibold mb-3 text-white">Face Detection</h3>
+                    <p class="text-gray-300 mb-4">
+                        The program detects hands through a webcam. It detects faces frame-by-frame from a video file, draws bounding boxes with styled corner lines around each detected face. It also displays the detection confidence percentage and frames per second (FPS) on the screen
+                    </p>
+                    <a href="https://github.com/nhanvan2506/faceDetection" class="text-blue-400 hover:underline font-medium">View Code</a>
+                </div>
+                <!-- Project 3 -->
+                <div class="bg-gray-900 p-6 rounded-lg shadow-lg project-card animate-on-scroll delay-200">
+                    <h3 class="text-2xl font-semibold mb-3 text-white">AI Training Counting</h3>
+                    <p class="text-gray-300 mb-4">
+                        This program uses computer vision to track body posture and count the number of weightlifting repetitions by analyzing arm movements.
+                    </p>
+                    <a href="https://github.com/nhanvan2506/AITrainer" class="text-blue-400 hover:underline font-medium">View Code</a>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg shadow-lg project-card animate-on-scroll delay-200">
+                    <h3 class="text-2xl font-semibold mb-3 text-white">Control volume by hand</h3>
+                    <p class="text-gray-300 mb-4">
+                        The program detects hands through a webcam and draws key landmarks on the hands. It controls the system volume based on the distance between the thumb and index finger. 
+                    </p>
+                    <a href="https://github.com/nhanvan2506/controlVolumeByHand" class="text-blue-400 hover:underline font-medium">View Code</a>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg shadow-lg project-card animate-on-scroll">
+                    <h3 class="text-2xl font-semibold mb-3 text-white">E-book Website</h3>
+                    <p class="text-gray-300 mb-4">
+                        The application is a user-friendly platform where users can register, log in, and purchase books through a secure, personalized account. They can update personal info, search for books or authors, view order history, leave comments, and explore author profiles with their published works.
+                    </p>
+                    <a href="https://github.com/nhanvan2506/e_book_website" class="text-blue-400 hover:underline font-medium">View Code</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 animate-on-scroll">Skills</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                <div class="bg-gray-900 p-4 rounded-lg shadow-lg text-center animate-on-scroll">
+                    <p class="font-semibold text-gray-300">Python</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded-lg shadow-lg text-center animate-on-scroll delay-100">
+                    <p class="font-semibold text-gray-300">TensorFlow</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded-lg shadow-lg text-center animate-on-scroll delay-200">
+                    <p class="font-semibold text-gray-300">PyTorch</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded-lg shadow-lg text-center animate-on-scroll delay-300">
+                    <p class="font-semibold text-gray-300">JavaScript</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded-lg shadow-lg text-center animate-on-scroll delay-400">
+                    <p class="font-semibold text-gray-300">SQL</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded-lg shadow-lg text-center animate-on-scroll delay-500">
+                    <p class="font-semibold text-gray-300">Git</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded-lg shadow-lg text-center animate-on-scroll delay-600">
+                    <p class="font-semibold text-gray-300">Machine/Deep Learning</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded-lg shadow-lg text-center animate-on-scroll delay-700">
+                    <p class="font-semibold text-gray-300">Computer Vision</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gradient-to-br from-blue-800 to-purple-900 text-white py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-12 animate-on-scroll">Contact Me</h2>
+            <p class="text-xl mb-8 animate-on-scroll delay-100">Interested in collaborating or have an opportunity for an AI Engineer Intern? Let's connect!</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8 animate-on-scroll delay-200">
+                <a href="mailto:nhanvan2019@gmail.com" class="text-white hover:text-gray-200 text-lg">Email: nhanvan2019@gmail.com</a>
+                <a href="https://www.linkedin.com/in/lenhanvan/" class="text-white hover:text-gray-200 text-lg">LinkedIn</a>
+                <a href="https://github.com/nhanvan2506" class="text-white hover:text-gray-200 text-lg">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>© 2025 AI Engineer Intern Portfolio. Crafted with passion.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const icon = themeToggle.querySelector('svg');
+            icon.innerHTML = document.body.classList.contains('light-mode')
+                ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />'
+                : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />';
+        });
+
+        // Scroll Animations
+        gsap.registerPlugin(ScrollTrigger);
+        document.querySelectorAll('.animate-on-scroll').forEach((el, index) => {
+            gsap.fromTo(el, 
+                { opacity: 0, y: 50 },
+                { 
+                    opacity: 1, 
+                    y: 0, 
+                    duration: 0.8, 
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: el,
+                        start: 'top 80%',
+                        toggleActions: 'play none none none'
+                    },
+                    delay: el.classList.contains('delay-100') ? 0.1 : 
+                           el.classList.contains('delay-200') ? 0.2 : 
+                           el.classList.contains('delay-300') ? 0.3 : 
+                           el.classList.contains('delay-400') ? 0.4 : 
+                           el.classList.contains('delay-500') ? 0.5 : 
+                           el.classList.contains('delay-600') ? 0.6 : 
+                           el.classList.contains('delay-700') ? 0.7 : 0
+                }
+            );
+        });
+    </script>
+</body>
+</html>
